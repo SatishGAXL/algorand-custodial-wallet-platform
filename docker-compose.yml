@@ -1,0 +1,40 @@
+version: "3.5"
+
+services:
+  app:
+    container_name: auth_poc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=http://prisma:4466
+      - JWT_SECRET=ak12341234
+    depends_on:
+      - prisma
+
+  prisma:
+    container_name: prisma
+    image: prismagraphql/prisma:1.34
+    restart: always
+    ports:
+      - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        managementApiSecret: my-server-secret-123
+        port: 4466
+        databases:
+          default:
+            connector: sqlite
+            database: file:./dev.db
+            migrations: true
+    volumes:
+      - prisma:/prisma
+
+volumes:
+  prisma:
