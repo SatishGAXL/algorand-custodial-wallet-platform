@@ -101,17 +101,35 @@ login-poc/
    - System creates Algorand wallet
    - Initial test tokens transferred
 
-
+   ![User Registration](flow_images/registration.png)
 
 2. **Token/NFT Creation**
    - User fills creation form
    - Metadata uploaded to IPFS (for NFTs)
    - Asset created on Algorand blockchain
 
+   ![Token Creation Form](flow_images/token_form.png)
+   Fig: Token Creation Form
+
+   ![NFT Creation Form](flow_images/nft_form.png)
+   Fig: NFT Creation Form
+
 3. **Asset Transfer**
    - User initiates transfer
    - System checks recipient eligibility
    - Transaction executed on blockchain
+
+   ![Transfer Form](flow_images/transfer_form.png)
+   Fig: Transfer Form
+
+4. **User Dashboard**
+   - Fungible and Non Fungible Token Categories
+   - Green Color Label for identifing created assets
+   - Orange Color Label for identifing Fractional NFTs
+   - Purple Label will consists of quantity
+
+   ![User Dashboard](flow_images/dashboard.png)
+   Fig: User Dashboard
 
 ## Security Considerations
 
